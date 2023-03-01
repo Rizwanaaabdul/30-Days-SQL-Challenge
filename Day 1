@@ -1,0 +1,13 @@
+Q1. write a query to select city names starts with vowel (aeiou).No duplicate city names are allowed
+TableName = Stations
+
+solution 1- Using LIKE clause:
+      select ditinct city from Stations where city LIKE 'A%' OR city like 'E%' OR city LIKE 'I%' OR  
+                                              city LIKE 'O%' OR city LIKE 'U%';
+
+Solution 2- Using LEFT clause:
+      select distinct city from Stations where LEFT(city,1) IN ('A','E','I','O','U');
+      
+Solution 3- Using REGEXP
+      select distinct city from Stations where city REGEXP '^[AEIOU]';
+      
