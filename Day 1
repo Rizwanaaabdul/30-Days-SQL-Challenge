@@ -1,5 +1,8 @@
+Difficulty level: Easy
+
 Q1. write a query to select city names starts with vowel (aeiou).No duplicate city names are allowed
-TableName = Stations
+TableName = Stations 
+
 
 solution 1- Using LIKE clause:
       select ditinct city from Stations where city LIKE 'A%' OR city like 'E%' OR city LIKE 'I%' OR  
