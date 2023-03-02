@@ -1,0 +1,19 @@
+Difficulty level - Easy
+
+Q1. write a query to select city names ends with vowel (aeiou).No duplicate city names are allowed
+TableName = Stations 
+
+
+solution 1- Using LIKE clause:
+      select ditinct city from Stations where city LIKE '%a' OR city like '%e' OR city LIKE '%i' OR  
+                                              city LIKE '%o' OR city LIKE '%u';
+
+Solution 2- Using LEFT clause:
+      select distinct city from Stations where Right(city,1) IN ('A','E','I','O','U');
+      
+Solution 3- Using REGEXP
+      select distinct city from Stations where city REGEXP_LIKE (city,'[AEIOU]$');
+      
+Solution 4- Using Substr
+      select distinct city from Stations where substr(city,-1,1) IN ('a','e','i','o','u');
+      
