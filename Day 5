@@ -1,0 +1,14 @@
+Difficulty leve: Medium
+
+Your bank has changed the branch_code "HDFC000123-22468566" to HDFC000ABC123-22468566". You have n customers 
+in your bank. Replace the old branch name to new branch name in all records.
+
+
+sol1: Update bank
+      set 
+      branch_code = Replace('branch_code','0123-','ABC123-')
+      where branch_code like '%0123-%';
+      
+sol2: Update bank
+      set 
+      branch_code = substring(branch_code,1,7)+'ABC'+substring(branch_code,8,19);
