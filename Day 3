@@ -1,0 +1,16 @@
+  Difficulty level  : Easy
+  
+  Q1. Write a query to display first 5 records from employee table.
+  sol:  select * from employee limit 5;
+  
+  
+  Q2. Write a query to display the next 5 records from employee table.
+  sol:  select * from employee limit 5 offset 5;
+  
+  
+  Q3. Write a query to display last 3 rows from ordered by salary.
+  sol:  select * from employee ordered by salary desc limit 3;
+  
+  
+  Q4. Write a query to display last 3 rows from employee table.
+  sol:  select * from employee limit (select count(*) from employee)-3, 3;
