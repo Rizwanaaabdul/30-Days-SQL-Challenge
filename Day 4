@@ -1,0 +1,9 @@
+Difficulty level : Easy
+
+Q1. Query to fetch the first 50% of records from employee table.
+sol:  select * from employee limit (select count(employee_id)/2 from employee);
+
+Q2. Query to show one row twice in results from employee table
+sol:  select * from employee e1 where e1.dept='IT'
+      UNION ALL
+      select * from employee e2 where e2.dept='IT'
